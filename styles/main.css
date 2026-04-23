@@ -28,6 +28,7 @@ header h2 {
     margin-left: 20px;
     color: whitesmoke;
 }
+
 main {
     width: 75%;
     margin: 0 auto;
@@ -64,10 +65,12 @@ main {
     color: whitesmoke;
     transition: all ease-in-out 200ms;
 }
+
 #nav_list a:hover {
     background-color: red;
     color: black;
 }
+
 section {
     grid-area: gallery;
     width: 75%;
@@ -83,16 +86,19 @@ footer {
     background-color: blue;
     margin-top: 10vh;
 }
+
 article h4 {
     font-size: 200%;
 }
+
 .caption {
     margin: 1em 20em 2em 0;
     padding-left: .5em;
     line-height: 1.5;
     border-left: 15px solid saddlebrown;
-    
+
 }
+
 .videowrapper {
     position: relative;
     padding-bottom: 56.25%;
@@ -111,4 +117,30 @@ article h4 {
     height: 100%;
     border-radius: 5px;
 
+}
+
+@media (max-width: 767px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'header'
+            'sidebar'
+            'gallery'
+            'footer';
+    }
+    main, section {
+        width: 100%;
+    }
+    .caption {
+    margin: 1em;
+    }
+    .videowrapper iframe {
+        border-radius: 0;
+    }
+article h4 {
+    font-size: 120%;
+}
+#nav_list {
+    display: none;
+}
 }
